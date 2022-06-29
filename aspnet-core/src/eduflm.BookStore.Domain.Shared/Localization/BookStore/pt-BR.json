@@ -26,6 +26,27 @@
     "Enum:BookType:5": "Horror",
     "Enum:BookType:6": "Ciência",
     "Enum:BookType:7": "Ficção Cientifica",
-    "Enum:BookType:8": "Poesia"
+    "Enum:BookType:8": "Poesia",
+
+    "Permission:BookStore": "Loja de Livros",
+    "Permission:Books": "Administração de Livros",
+    "Permission:Books.Create": "Criando Livros",
+    "Permission:Books.Edit": "Editando Livros",
+    "Permission:Books.Delete": "Deletando Livros",
+
+    "Permission:Authors": "Administração de Autores",
+    "Permission:Authors.Create": "Criando Novos Autores",
+    "Permission:Authors.Edit": "Editando Autores",
+    "Permission:Authors.Delete": "Removendo Autores",
+
+    "Menu:Authors": "Autores",
+    "Authors": "Autores",
+    "AuthorDeletionConfirmationMessage": "Tem certeza que deseja deletar o autor '{0}'?",
+    "BirthDate": "Data de Nascimento",
+    "NewAuthor": "Novo autor",
+
+
+    "BookStore:00001": "Já existe um author com este nome: {name}"
+
   }
 }

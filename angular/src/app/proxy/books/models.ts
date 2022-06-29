@@ -1,10 +1,16 @@
-import type { AuditedEntityDto } from '@abp/ng.core';
+import type { AuditedEntityDto, EntityDto } from '@abp/ng.core';
 import type { BookType } from './book-type.enum';
 
+export interface AuthorLookupDto extends EntityDto<string> {
+  name?: string;
+}
+
 export interface BookDto extends AuditedEntityDto<string> {
+  authorId?: string;
+  authorName?: string;
   name?: string;
   type: BookType;
-  publishedDate?: string;
+  publishDate?: string;
   price?: string;
 }
 
@@ -13,4 +19,5 @@ export interface CreateUpdateBookDto {
   type: BookType;
   publishDate: string;
   price: number;
+  authorId?: string;
 }

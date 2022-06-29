@@ -3,6 +3,543 @@
     "app"
   ],
   "modules": {
+    "app": {
+      "rootPath": "app",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "eduflm.BookStore.Books.BookAppService": {
+          "controllerName": "Book",
+          "controllerGroupName": "Book",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "eduflm.BookStore.Books.BookAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Volo.Abp.GlobalFeatures.IGlobalFeatureCheckingEnabled"
+            },
+            {
+              "type": "eduflm.BookStore.Books.IBookAppService"
+            }
+          ],
+          "actions": {
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/book/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "eduflm.BookStore.Books.BookDto",
+                "typeSimple": "eduflm.BookStore.Books.BookDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.BookDto,System.Guid,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/book",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
+                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Books.BookDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Books.BookDto>"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.BookDto,System.Guid,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
+            },
+            "GetAuthorLookupAsync": {
+              "uniqueName": "GetAuthorLookupAsync",
+              "name": "GetAuthorLookupAsync",
+              "httpMethod": "GET",
+              "url": "api/app/book/author-lookup",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<eduflm.BookStore.Books.AuthorLookupDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<eduflm.BookStore.Books.AuthorLookupDto>"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Books.IBookAppService"
+            },
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/book",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "eduflm.BookStore.Books.CreateUpdateBookDto, eduflm.BookStore.Application.Contracts",
+                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "eduflm.BookStore.Books.BookDto",
+                "typeSimple": "eduflm.BookStore.Books.BookDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.CreateUpdateBookDto>"
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/book/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "eduflm.BookStore.Books.CreateUpdateBookDto, eduflm.BookStore.Application.Contracts",
+                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "eduflm.BookStore.Books.BookDto",
+                "typeSimple": "eduflm.BookStore.Books.BookDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<eduflm.BookStore.Books.BookDto,System.Guid,eduflm.BookStore.Books.CreateUpdateBookDto>"
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/book/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "Volo.Abp.Application.Services.IDeleteAppService<System.Guid>"
+            }
+          }
+        },
+        "eduflm.BookStore.Authors.AuthorAppService": {
+          "controllerName": "Author",
+          "controllerGroupName": "Author",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "eduflm.BookStore.Authors.AuthorAppService",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.Validation.IValidationEnabled"
+            },
+            {
+              "type": "Volo.Abp.Auditing.IAuditingEnabled"
+            },
+            {
+              "type": "Volo.Abp.GlobalFeatures.IGlobalFeatureCheckingEnabled"
+            },
+            {
+              "type": "eduflm.BookStore.Authors.IAuthorAppService"
+            }
+          ],
+          "actions": {
+            "GetAsyncById": {
+              "uniqueName": "GetAsyncById",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/app/author/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "eduflm.BookStore.Authors.AuthorDto",
+                "typeSimple": "eduflm.BookStore.Authors.AuthorDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Authors.IAuthorAppService"
+            },
+            "GetListAsyncByInput": {
+              "uniqueName": "GetListAsyncByInput",
+              "name": "GetListAsync",
+              "httpMethod": "GET",
+              "url": "api/app/author",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "eduflm.BookStore.Authors.GetAuthorListDto, eduflm.BookStore.Application.Contracts",
+                  "type": "eduflm.BookStore.Authors.GetAuthorListDto",
+                  "typeSimple": "eduflm.BookStore.Authors.GetAuthorListDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "Filter",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "Sorting",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "SkipCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "MaxResultCount",
+                  "jsonName": null,
+                  "type": "System.Int32",
+                  "typeSimple": "number",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": "input"
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Authors.AuthorDto>",
+                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Authors.AuthorDto>"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Authors.IAuthorAppService"
+            },
+            "CreateAsyncByInput": {
+              "uniqueName": "CreateAsyncByInput",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/author",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "eduflm.BookStore.Authors.CreateAuthorDto, eduflm.BookStore.Application.Contracts",
+                  "type": "eduflm.BookStore.Authors.CreateAuthorDto",
+                  "typeSimple": "eduflm.BookStore.Authors.CreateAuthorDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "eduflm.BookStore.Authors.CreateAuthorDto",
+                  "typeSimple": "eduflm.BookStore.Authors.CreateAuthorDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "eduflm.BookStore.Authors.AuthorDto",
+                "typeSimple": "eduflm.BookStore.Authors.AuthorDto"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Authors.IAuthorAppService"
+            },
+            "UpdateAsyncByIdAndInput": {
+              "uniqueName": "UpdateAsyncByIdAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/app/author/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "eduflm.BookStore.Authors.UpdateAuthorDto, eduflm.BookStore.Application.Contracts",
+                  "type": "eduflm.BookStore.Authors.UpdateAuthorDto",
+                  "typeSimple": "eduflm.BookStore.Authors.UpdateAuthorDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "eduflm.BookStore.Authors.UpdateAuthorDto",
+                  "typeSimple": "eduflm.BookStore.Authors.UpdateAuthorDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Authors.IAuthorAppService"
+            },
+            "DeleteAsyncById": {
+              "uniqueName": "DeleteAsyncById",
+              "name": "DeleteAsync",
+              "httpMethod": "DELETE",
+              "url": "api/app/author/{id}",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "id",
+                  "typeAsString": "System.Guid, System.Private.CoreLib",
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "id",
+                  "name": "id",
+                  "jsonName": null,
+                  "type": "System.Guid",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": [],
+                  "bindingSourceId": "Path",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": false,
+              "implementFrom": "eduflm.BookStore.Authors.IAuthorAppService"
+            }
+          }
+        }
+      }
+    },
     "permissionManagement": {
       "rootPath": "permissionManagement",
       "remoteServiceName": "AbpPermissionManagement",
@@ -152,6 +689,78 @@
               },
               "allowAnonymous": null,
               "implementFrom": "Volo.Abp.PermissionManagement.IPermissionAppService"
+            }
+          }
+        }
+      }
+    },
+    "settingManagement": {
+      "rootPath": "settingManagement",
+      "remoteServiceName": "SettingManagement",
+      "controllers": {
+        "Volo.Abp.SettingManagement.EmailSettingsController": {
+          "controllerName": "EmailSettings",
+          "controllerGroupName": "EmailSettings",
+          "isRemoteService": true,
+          "apiVersion": null,
+          "type": "Volo.Abp.SettingManagement.EmailSettingsController",
+          "interfaces": [
+            {
+              "type": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+            }
+          ],
+          "actions": {
+            "GetAsync": {
+              "uniqueName": "GetAsync",
+              "name": "GetAsync",
+              "httpMethod": "GET",
+              "url": "api/setting-management/emailing",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.SettingManagement.EmailSettingsDto",
+                "typeSimple": "Volo.Abp.SettingManagement.EmailSettingsDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+            },
+            "UpdateAsyncByInput": {
+              "uniqueName": "UpdateAsyncByInput",
+              "name": "UpdateAsync",
+              "httpMethod": "POST",
+              "url": "api/setting-management/emailing",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto, Volo.Abp.SettingManagement.Application.Contracts",
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "input",
+                  "name": "input",
+                  "jsonName": null,
+                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
             }
           }
         }
@@ -1461,261 +2070,6 @@
         }
       }
     },
-    "app": {
-      "rootPath": "app",
-      "remoteServiceName": "Default",
-      "controllers": {
-        "eduflm.BookStore.Books.BookAppService": {
-          "controllerName": "Book",
-          "controllerGroupName": "Book",
-          "isRemoteService": true,
-          "apiVersion": null,
-          "type": "eduflm.BookStore.Books.BookAppService",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.Validation.IValidationEnabled"
-            },
-            {
-              "type": "Volo.Abp.Auditing.IAuditingEnabled"
-            },
-            {
-              "type": "Volo.Abp.GlobalFeatures.IGlobalFeatureCheckingEnabled"
-            }
-          ],
-          "actions": {
-            "CreateAsyncByInput": {
-              "uniqueName": "CreateAsyncByInput",
-              "name": "CreateAsync",
-              "httpMethod": "POST",
-              "url": "api/app/book",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "eduflm.BookStore.Books.CreateUpdateBookDto, eduflm.BookStore.Application.Contracts",
-                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "eduflm.BookStore.Books.BookDto",
-                "typeSimple": "eduflm.BookStore.Books.BookDto"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.CreateUpdateBookDto>"
-            },
-            "UpdateAsyncByIdAndInput": {
-              "uniqueName": "UpdateAsyncByIdAndInput",
-              "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/app/book/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "eduflm.BookStore.Books.CreateUpdateBookDto, eduflm.BookStore.Application.Contracts",
-                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "typeSimple": "eduflm.BookStore.Books.CreateUpdateBookDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "eduflm.BookStore.Books.BookDto",
-                "typeSimple": "eduflm.BookStore.Books.BookDto"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<eduflm.BookStore.Books.BookDto,System.Guid,eduflm.BookStore.Books.CreateUpdateBookDto>"
-            },
-            "DeleteAsyncById": {
-              "uniqueName": "DeleteAsyncById",
-              "name": "DeleteAsync",
-              "httpMethod": "DELETE",
-              "url": "api/app/book/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IDeleteAppService<System.Guid>"
-            },
-            "GetAsyncById": {
-              "uniqueName": "GetAsyncById",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/app/book/{id}",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "id",
-                  "typeAsString": "System.Guid, System.Private.CoreLib",
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "id",
-                  "name": "id",
-                  "jsonName": null,
-                  "type": "System.Guid",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": [],
-                  "bindingSourceId": "Path",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "eduflm.BookStore.Books.BookDto",
-                "typeSimple": "eduflm.BookStore.Books.BookDto"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.BookDto,System.Guid,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
-            },
-            "GetListAsyncByInput": {
-              "uniqueName": "GetListAsyncByInput",
-              "name": "GetListAsync",
-              "httpMethod": "GET",
-              "url": "api/app/book",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Books.BookDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<eduflm.BookStore.Books.BookDto>"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<eduflm.BookStore.Books.BookDto,eduflm.BookStore.Books.BookDto,System.Guid,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
-            }
-          }
-        }
-      }
-    },
     "abp": {
       "rootPath": "abp",
       "remoteServiceName": "abp",
@@ -1886,60 +2240,142 @@
         }
       }
     },
-    "settingManagement": {
-      "rootPath": "settingManagement",
-      "remoteServiceName": "SettingManagement",
+    "featureManagement": {
+      "rootPath": "featureManagement",
+      "remoteServiceName": "AbpFeatureManagement",
       "controllers": {
-        "Volo.Abp.SettingManagement.EmailSettingsController": {
-          "controllerName": "EmailSettings",
-          "controllerGroupName": "EmailSettings",
+        "Volo.Abp.FeatureManagement.FeaturesController": {
+          "controllerName": "Features",
+          "controllerGroupName": "Features",
           "isRemoteService": true,
           "apiVersion": null,
-          "type": "Volo.Abp.SettingManagement.EmailSettingsController",
+          "type": "Volo.Abp.FeatureManagement.FeaturesController",
           "interfaces": [
             {
-              "type": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+              "type": "Volo.Abp.FeatureManagement.IFeatureAppService"
             }
           ],
           "actions": {
-            "GetAsync": {
-              "uniqueName": "GetAsync",
+            "GetAsyncByProviderNameAndProviderKey": {
+              "uniqueName": "GetAsyncByProviderNameAndProviderKey",
               "name": "GetAsync",
               "httpMethod": "GET",
-              "url": "api/setting-management/emailing",
-              "supportedVersions": [],
-              "parametersOnMethod": [],
-              "parameters": [],
-              "returnValue": {
-                "type": "Volo.Abp.SettingManagement.EmailSettingsDto",
-                "typeSimple": "Volo.Abp.SettingManagement.EmailSettingsDto"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
-            },
-            "UpdateAsyncByInput": {
-              "uniqueName": "UpdateAsyncByInput",
-              "name": "UpdateAsync",
-              "httpMethod": "POST",
-              "url": "api/setting-management/emailing",
+              "url": "api/feature-management/features",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto, Volo.Abp.SettingManagement.Application.Contracts",
-                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
-                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
                   "isOptional": false,
                   "defaultValue": null
                 }
               ],
               "parameters": [
                 {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "Volo.Abp.FeatureManagement.GetFeatureListResultDto",
+                "typeSimple": "Volo.Abp.FeatureManagement.GetFeatureListResultDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Volo.Abp.FeatureManagement.IFeatureAppService"
+            },
+            "UpdateAsyncByProviderNameAndProviderKeyAndInput": {
+              "uniqueName": "UpdateAsyncByProviderNameAndProviderKeyAndInput",
+              "name": "UpdateAsync",
+              "httpMethod": "PUT",
+              "url": "api/feature-management/features",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "providerName",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "providerKey",
+                  "typeAsString": "System.String, System.Private.CoreLib",
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null
+                },
+                {
+                  "name": "input",
+                  "typeAsString": "Volo.Abp.FeatureManagement.UpdateFeaturesDto, Volo.Abp.FeatureManagement.Application.Contracts",
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "providerName",
+                  "name": "providerName",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
+                  "nameOnMethod": "providerKey",
+                  "name": "providerKey",
+                  "jsonName": null,
+                  "type": "System.String",
+                  "typeSimple": "string",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "ModelBinding",
+                  "descriptorName": ""
+                },
+                {
                   "nameOnMethod": "input",
                   "name": "input",
                   "jsonName": null,
-                  "type": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
-                  "typeSimple": "Volo.Abp.SettingManagement.UpdateEmailSettingsDto",
+                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
+                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
                   "isOptional": false,
                   "defaultValue": null,
                   "constraintTypes": null,
@@ -1952,7 +2388,7 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.SettingManagement.IEmailSettingsAppService"
+              "implementFrom": "Volo.Abp.FeatureManagement.IFeatureAppService"
             }
           }
         }
@@ -2286,160 +2722,6 @@
               },
               "allowAnonymous": null,
               "implementFrom": "Volo.Abp.Account.IProfileAppService"
-            }
-          }
-        }
-      }
-    },
-    "featureManagement": {
-      "rootPath": "featureManagement",
-      "remoteServiceName": "AbpFeatureManagement",
-      "controllers": {
-        "Volo.Abp.FeatureManagement.FeaturesController": {
-          "controllerName": "Features",
-          "controllerGroupName": "Features",
-          "isRemoteService": true,
-          "apiVersion": null,
-          "type": "Volo.Abp.FeatureManagement.FeaturesController",
-          "interfaces": [
-            {
-              "type": "Volo.Abp.FeatureManagement.IFeatureAppService"
-            }
-          ],
-          "actions": {
-            "GetAsyncByProviderNameAndProviderKey": {
-              "uniqueName": "GetAsyncByProviderNameAndProviderKey",
-              "name": "GetAsync",
-              "httpMethod": "GET",
-              "url": "api/feature-management/features",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.FeatureManagement.GetFeatureListResultDto",
-                "typeSimple": "Volo.Abp.FeatureManagement.GetFeatureListResultDto"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.FeatureManagement.IFeatureAppService"
-            },
-            "UpdateAsyncByProviderNameAndProviderKeyAndInput": {
-              "uniqueName": "UpdateAsyncByProviderNameAndProviderKeyAndInput",
-              "name": "UpdateAsync",
-              "httpMethod": "PUT",
-              "url": "api/feature-management/features",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "providerName",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "providerKey",
-                  "typeAsString": "System.String, System.Private.CoreLib",
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null
-                },
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.FeatureManagement.UpdateFeaturesDto, Volo.Abp.FeatureManagement.Application.Contracts",
-                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "providerName",
-                  "name": "providerName",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "providerKey",
-                  "name": "providerKey",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": ""
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "input",
-                  "jsonName": null,
-                  "type": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "typeSimple": "Volo.Abp.FeatureManagement.UpdateFeaturesDto",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "Body",
-                  "descriptorName": ""
-                }
-              ],
-              "returnValue": {
-                "type": "System.Void",
-                "typeSimple": "System.Void"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.FeatureManagement.IFeatureAppService"
             }
           }
         }
@@ -5647,71 +5929,6 @@
         }
       ]
     },
-    "eduflm.BookStore.Books.CreateUpdateBookDto": {
-      "baseType": null,
-      "isEnum": false,
-      "enumNames": null,
-      "enumValues": null,
-      "genericArguments": null,
-      "properties": [
-        {
-          "name": "Name",
-          "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
-          "isRequired": true
-        },
-        {
-          "name": "Type",
-          "jsonName": null,
-          "type": "eduflm.BookStore.Books.BookType",
-          "typeSimple": "eduflm.BookStore.Books.BookType",
-          "isRequired": true
-        },
-        {
-          "name": "PublishDate",
-          "jsonName": null,
-          "type": "System.DateTime",
-          "typeSimple": "string",
-          "isRequired": true
-        },
-        {
-          "name": "Price",
-          "jsonName": null,
-          "type": "System.Single",
-          "typeSimple": "number",
-          "isRequired": true
-        }
-      ]
-    },
-    "eduflm.BookStore.Books.BookType": {
-      "baseType": "System.Enum",
-      "isEnum": true,
-      "enumNames": [
-        "Undefined",
-        "Adventure",
-        "Biography",
-        "Dystopia",
-        "Fantastic",
-        "Horror",
-        "Science",
-        "ScienceFiction",
-        "Poetry"
-      ],
-      "enumValues": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "genericArguments": null,
-      "properties": null
-    },
     "eduflm.BookStore.Books.BookDto": {
       "baseType": "Volo.Abp.Application.Dtos.AuditedEntityDto<System.Guid>",
       "isEnum": false,
@@ -5720,6 +5937,20 @@
       "genericArguments": null,
       "properties": [
         {
+          "name": "AuthorId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "AuthorName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
           "name": "Name",
           "jsonName": null,
           "type": "System.String",
@@ -5734,7 +5965,7 @@
           "isRequired": false
         },
         {
-          "name": "PublishedDate",
+          "name": "PublishDate",
           "jsonName": null,
           "type": "System.DateTime",
           "typeSimple": "string",
@@ -5824,6 +6055,200 @@
       "enumValues": null,
       "genericArguments": null,
       "properties": []
+    },
+    "eduflm.BookStore.Books.BookType": {
+      "baseType": "System.Enum",
+      "isEnum": true,
+      "enumNames": [
+        "Undefined",
+        "Adventure",
+        "Biography",
+        "Dystopia",
+        "Fantastic",
+        "Horror",
+        "Science",
+        "ScienceFiction",
+        "Poetry"
+      ],
+      "enumValues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "genericArguments": null,
+      "properties": null
+    },
+    "eduflm.BookStore.Books.AuthorLookupDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "eduflm.BookStore.Books.CreateUpdateBookDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "Type",
+          "jsonName": null,
+          "type": "eduflm.BookStore.Books.BookType",
+          "typeSimple": "eduflm.BookStore.Books.BookType",
+          "isRequired": true
+        },
+        {
+          "name": "PublishDate",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "Price",
+          "jsonName": null,
+          "type": "System.Single",
+          "typeSimple": "number",
+          "isRequired": true
+        },
+        {
+          "name": "AuthorId",
+          "jsonName": null,
+          "type": "System.Guid",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "eduflm.BookStore.Authors.AuthorDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Guid>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "BirthDate",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": false
+        },
+        {
+          "name": "ShortBio",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "eduflm.BookStore.Authors.GetAuthorListDto": {
+      "baseType": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Filter",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "eduflm.BookStore.Authors.CreateAuthorDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "BirthDate",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "ShortBio",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
+    },
+    "eduflm.BookStore.Authors.UpdateAuthorDto": {
+      "baseType": null,
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "Name",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "BirthDate",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": true
+        },
+        {
+          "name": "ShortBio",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false
+        }
+      ]
     }
   }
 }

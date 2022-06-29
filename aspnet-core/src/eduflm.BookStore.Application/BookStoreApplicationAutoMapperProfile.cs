@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eduflm.BookStore.Authors;
 using eduflm.BookStore.Books;
 
 namespace eduflm.BookStore;
@@ -13,5 +14,8 @@ public class BookStoreApplicationAutoMapperProfile : Profile
 
         CreateMap<Book, BookDto>();
         CreateMap<CreateUpdateBookDto, Book>();
+
+        CreateMap<Author, AuthorDto>();
+        CreateMap<Author, AuthorLookupDto>();
     }
 }
